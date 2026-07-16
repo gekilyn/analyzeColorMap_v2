@@ -53,10 +53,6 @@ export default function handleImageUpload(event, setter) {
       imgData.hsvData,
       imgData.allPixelAmount,
     );
-    imgData.saturationData = generateSaturationLabelsAndData(
-      imgData.hsvFrequency.saturationCounts,
-      imgData.allPixelAmount,
-    );
     setter(imgData);
   };
 

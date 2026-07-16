@@ -9,7 +9,7 @@ export default function App() {
     <>
       <h1>画像の色相・彩度・明度分析</h1>
       <ImageBox setImgData={setImgData} />
-      <Charts imgData={imgData} />
+      {imgData.hsvFrequency && <Charts hsvFrequency={imgData.hsvFrequency} />}
     </>
   );
 }

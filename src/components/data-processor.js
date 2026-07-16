@@ -49,10 +49,13 @@ function processHSVFrequencyData(hsvData, allPixelAmount) {
   });
 
   return {
-    hueCounts,
+    hueData: generateHueLabelsAndData(hueCounts, allPixelAmount),
     svCounts,
-    saturationCounts,
-    valueCounts,
+    saturationData: generateSaturationLabelsAndData(
+      saturationCounts,
+      allPixelAmount,
+    ),
+    valueData: generateValueLabelsAndData(valueCounts, allPixelAmount),
   };
 }
 

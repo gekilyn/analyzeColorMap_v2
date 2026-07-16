@@ -5,7 +5,7 @@ import SaturationChart from "./SaturationChart";
 export default function Charts(props) {
   return (
     <>
-      <SaturationChart saturationData={props.imgData.saturationData} />
+      <SaturationChart saturationData={props.hsvFrequency.saturationData} />
     </>
   );
 }
