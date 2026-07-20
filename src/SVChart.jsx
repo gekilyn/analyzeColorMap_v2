@@ -1,9 +1,9 @@
 import { ScatterChart } from "@mui/x-charts";
 export default function SVChart(props) {
   return (
-    <>
+    <div className="chart-block">
       <ScatterChart
-        height={200}
+        height={300}
         series={[{ data: props.svData, sizeAxisId: "size" }]}
         zAxis={[
           {
@@ -12,6 +12,7 @@ export default function SVChart(props) {
           },
         ]}
       />
-    </>
+      <h2>彩度・明度</h2>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: black;
+  --text-h: #black;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -24,6 +24,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
 
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -59,7 +60,7 @@ input {
 }
 
 #root {
-  width: 1126px;
+  /* width: 1126px; */
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -70,11 +71,62 @@ input {
   box-sizing: border-box;
 }
 
+.app-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.image-panel,
+.charts-panel {
+  flex: 1 1 420px;
+  min-width: 320px;
+}
+
+.image-panel {
+  max-width: 420px;
+}
+
+.charts-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.chart-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.top-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.top-charts > * {
+  flex: 1 1 220px;
+  min-width: 240px;
+}
+
+.bottom-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: black;
 }
 
 h1 {

@@ -16,7 +16,7 @@
  */
 function processHSVFrequencyData(hsvData, allPixelAmount) {
   // 色相の出現頻度を保存する配列（0から360まで、要素数361）
-  const hueCounts = new Array(361).fill(0);
+  const hueCounts = new Array(120).fill(0);
 
   // 彩度と明度の出現頻度を保存する二次元配列（0から100までを双方5刻みなので、要素数21*21）
   const svCounts = new Array(21 * 21);
@@ -32,7 +32,7 @@ function processHSVFrequencyData(hsvData, allPixelAmount) {
   // HSV 値の頻度を記録
   hsvData.forEach((hsv) => {
     if (hsv.s > 0) {
-      hueCounts[hsv.h] += hsv.amount;
+      hueCounts[hsv.h / 3] += hsv.amount;
     }
     //  else {
     //   console.log(hsv);
@@ -66,7 +66,7 @@ function processHSVFrequencyData(hsvData, allPixelAmount) {
  * @returns {Object} ラベルとデータ
  */
 function generateHueLabelsAndData(hueCounts, allPixelAmount) {
-  const labels = Array.from({ length: 360 }, (_, i) => i);
+  const labels = Array.from({ length: 120 }, (_, i) => i * 3);
   const data = hueCounts.map((count) => (count / allPixelAmount) * 100);
   return { labels, data, counts: hueCounts };
 }

@@ -8,8 +8,16 @@ export default function App() {
   return (
     <>
       <h1>画像の色相・彩度・明度分析</h1>
-      <ImageBox setImgData={setImgData} />
-      {imgData.hsvFrequency && <Charts hsvFrequency={imgData.hsvFrequency} />}
+      <div className="app-layout">
+        <div className="image-panel">
+          <ImageBox setImgData={setImgData} />
+        </div>
+        {imgData.hsvFrequency && (
+          <div className="charts-panel">
+            <Charts hsvFrequency={imgData.hsvFrequency} />
+          </div>
+        )}
+      </div>
     </>
   );
 }

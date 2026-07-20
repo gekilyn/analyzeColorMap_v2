@@ -17,11 +17,12 @@ export default function handleImageUpload(event, setter) {
   const ctx = canvas.getContext("2d");
   const reader = new FileReader();
 
-  //inputタグで入れたファイル名に即して、ファイルの画像データをここでimgにセットする→プレビュー画像を入れたい場合はここ弄る？
+  //inputタグで入れたファイル名に即して、ファイルの画像データをここでimgにセットする関数をreader.onloadに代入
   reader.onload = function (e) {
     img.src = e.target.result;
   };
 
+  //imgに画像がセットされたら行う処理を関数としてimg.onloadに代入
   img.onload = function () {
     const originalWidth = img.width;
     const originalHeight = img.height;

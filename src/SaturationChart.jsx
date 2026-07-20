@@ -4,7 +4,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 
 export default function SaturationChart(props) {
   return (
-    <>
+    <div>
       {props.saturationData?.data && (
         <BarChart
           height={100}
@@ -12,6 +12,7 @@ export default function SaturationChart(props) {
           xAxis={[{ data: props.saturationData.labels }]}
         />
       )}
-    </>
+      <h2>彩度</h2>
+    </div>
   );
 }
