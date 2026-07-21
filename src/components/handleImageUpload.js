@@ -5,8 +5,9 @@ import {
   generateSaturationLabelsAndData,
   generateValueLabelsAndData,
 } from "./data-processor";
+import { ClipStudio } from "clipstudio";
 
-export default function handleImageUpload(event, setter) {
+export default async function handleImageUpload(event, setter) {
   const file = event.target.files[0];
   if (!file) {
     return;
@@ -17,9 +18,17 @@ export default function handleImageUpload(event, setter) {
   const ctx = canvas.getContext("2d");
   const reader = new FileReader();
 
+  console.log(event.target.files[0]);
+
   //inputタグで入れたファイル名に即して、ファイルの画像データをここでimgにセットする関数をreader.onloadに代入
-  reader.onload = function (e) {
+  reader.onload = async function (e) {
+    //event.target.files[0]のファイル名の末尾が.clipなら、ClipStudioのAPIを使って画像を開く
+    // if (file.name.endsWith(".clip")) {
+    //   const clipStudio = await ClipStudio.load(file);
+    //   img.src = URL.createObjectURL(clipStudio.getThumbnail());
+    // } else {
     img.src = e.target.result;
+    // }
   };
 
   //imgに画像がセットされたら行う処理を関数としてimg.onloadに代入

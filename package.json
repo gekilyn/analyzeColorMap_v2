@@ -18,9 +18,11 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@zumer/snapdom": "^2.16.0",
+    "clipstudio": "^0.1.1",
     "html2canvas": "^1.4.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "vite-plugin-node-polyfills": "^0.28.0",
     "vitest": "^4.1.10"
   },
   "devDependencies": {
