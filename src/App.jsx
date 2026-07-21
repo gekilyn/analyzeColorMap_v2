@@ -1,7 +1,9 @@
 import ImageBox from "./ImageBox";
-import Charts from "./Charts";
+// import Charts from "./Charts";
 import Table from "./Table";
-import { useState } from "react";
+import { useState, lazy } from "react";
+
+const Charts = lazy(() => import("./Charts"));
 
 export default function App() {
   const [imgData, setImgData] = useState({});

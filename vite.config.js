@@ -14,6 +14,7 @@ export default defineConfig({
     exclude: ["e2e/**", "**/*.e2e.test.*", "node_modules/**", "dist/**"],
   },
   build: {
-    outDir: "docs",
+    outDir: "dist",
+    minify: "oxc",
   },
 });
