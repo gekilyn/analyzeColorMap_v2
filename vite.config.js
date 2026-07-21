@@ -5,7 +5,7 @@ import babel from "@rolldown/plugin-babel";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "./",
+  base: "/analyzeColorMap_v2/",
   plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
   test: {
     globals: true,
@@ -14,6 +14,7 @@ export default defineConfig({
     exclude: ["e2e/**", "**/*.e2e.test.*", "node_modules/**", "dist/**"],
   },
   build: {
-    outDir: "docs",
+    outDir: "dist",
+    minify: "oxc",
   },
 });

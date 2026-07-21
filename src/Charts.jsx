@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
 
-import SaturationChart from "./SaturationChart";
-import ValueChart from "./ValueChart";
-import SVChart from "./SVChart";
-import HueChart from "./HueChart";
+const HueChart = lazy(() => import("./HueChart"));
+const SVChart = lazy(() => import("./SVChart"));
+const SaturationChart = lazy(() => import("./SaturationChart"));
+const ValueChart = lazy(() => import("./ValueChart"));
 
 export default function Charts(props) {
   return (
