@@ -1,3 +1,5 @@
+"use strict";
+
 function rgbToHsv(r, g, b) {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);

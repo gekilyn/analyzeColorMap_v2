@@ -1,3 +1,5 @@
+"use strict";
+
 import { hsvToRgb, rgbToHsv } from "./convertHSVandRGBA";
 
 export default function extractHSV(ctx, width, height) {

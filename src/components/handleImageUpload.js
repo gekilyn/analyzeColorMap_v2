@@ -1,3 +1,5 @@
+"use strict";
+
 import extractHSV from "./extractHSV";
 import {
   processHSVFrequencyData,
