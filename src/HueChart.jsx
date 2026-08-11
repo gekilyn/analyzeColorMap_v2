@@ -8,18 +8,21 @@ export default function HueChart(props) {
     .concat(props.hueData.data.slice(0, 20));
   return (
     <div className="chart-block">
-      <RadarChart
-        height={300}
-        series={[{ data: hueData }]}
-        radar={{
-          max: Math.max(...props.hueData.data) * 1.1,
-          metrics: props.hueData.labels.map((element) =>
-            String(element + 60 < 360 ? element + 60 : element - 300),
-          ),
-          labelFormatter: (name, { location }) =>
-            location === "tick" && Number(name) % 30 !== 0 ? "" : name,
-        }}
-      />
+      <div className="hue-chart-wrapper">
+        <div className="hue-wheel-background" aria-hidden="true" />
+        <RadarChart
+          height={300}
+          series={[{ data: hueData }]}
+          radar={{
+            max: Math.max(...props.hueData.data) * 1.1,
+            metrics: props.hueData.labels.map((element) =>
+              String(element + 60 < 360 ? element + 60 : element - 300),
+            ),
+            labelFormatter: (name, { location }) =>
+              location === "tick" && Number(name) % 30 !== 0 ? "" : name,
+          }}
+        />
+      </div>
       <h2>色相</h2>
     </div>
   );

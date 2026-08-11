@@ -104,6 +104,33 @@ input {
   width: 100%;
 }
 
+.hue-chart-wrapper {
+  position: relative;
+}
+
+.hue-wheel-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* 色相環の頂点(0deg=上)がHue60になるよう-60degずらす */
+  background: conic-gradient(
+    from -60deg,
+    hsl(0, 100%, 50%),
+    hsl(60, 100%, 50%),
+    hsl(120, 100%, 50%),
+    hsl(180, 100%, 50%),
+    hsl(240, 100%, 50%),
+    hsl(300, 100%, 50%),
+    hsl(360, 100%, 50%)
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .top-charts {
   display: flex;
   flex-wrap: wrap;
