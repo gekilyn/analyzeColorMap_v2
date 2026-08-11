@@ -8,12 +8,7 @@ import {
   generateValueLabelsAndData,
 } from "./data-processor";
 
-export default function handleImageUpload(event, setter) {
-  const file = event.target.files[0];
-  if (!file) {
-    return;
-  }
-
+const handleImage = (file, setter) => {
   const img = new Image();
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
@@ -60,4 +55,31 @@ export default function handleImageUpload(event, setter) {
   };
 
   reader.readAsDataURL(file);
+};
+
+function handlePaste(event, setter) {
+  const items = event.clipboardData && event.clipboardData.items;
+  if (!items) {
+    return;
+  }
+
+  for (const item of items) {
+    if (item.type.indexOf("image") !== -1) {
+      const file = item.getAsFile();
+      if (file) {
+        handleImage(file, setter);
+      }
+      break;
+    }
+  }
 }
+
+function handleImageUpload(event, setter) {
+  const file = event.target.files[0];
+  if (!file) {
+    return;
+  }
+  handleImage(file, setter);
+}
+
+export { handleImageUpload, handlePaste };
