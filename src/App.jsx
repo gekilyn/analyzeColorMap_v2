@@ -15,9 +15,12 @@ export default function App() {
           <ImageBox setImgData={setImgData} />
         </div>
         {imgData.hsvFrequency && (
-          <div className="charts-panel">
-            <Charts hsvFrequency={imgData.hsvFrequency} />
-          </div>
+          <>
+            <div className="charts-panel">
+              <Charts hsvFrequency={imgData.hsvFrequency} />
+            </div>
+            <div id="results"></div>
+          </>
         )}
       </div>
     </>
